@@ -11,15 +11,15 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="prependedInput")
+    @FindBy(name="user")
     public WebElement userName;
 
 
 
-    @FindBy(id="prependedInput2")
+    @FindBy(id="password")
     public WebElement password;
 
-    @FindBy(name = "_submit")
+    @FindBy(id="submit-form")
     public WebElement submit;
 
 
@@ -30,4 +30,10 @@ public class LoginPage {
         // verification that we logged
     }
 
+
+    public void loginMethod(){
+        this.userName.sendKeys("user1");
+        this.password.sendKeys("Userpass123");
+        this.submit.click();
+    }
 }
